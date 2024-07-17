@@ -1,0 +1,45 @@
+.project_card {
+  width: 400px;
+  height: 150px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.project_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.project_card_bottom_line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project_card_delete {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.project_card_delete:hover {
+  background-color: #ebebeb;
+}
+
+.delete_icon {
+  width: 20px;
+  opacity: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.project_card_delete:hover .delete_icon {
+  opacity: 100%;
+}
