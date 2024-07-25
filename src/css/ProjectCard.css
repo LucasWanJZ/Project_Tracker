@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 
 .project_card_delete {
@@ -28,6 +29,8 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  flex: 0 0 auto;
+  margin-left: 30%;
 }
 
 .project_card_delete:hover {
@@ -38,6 +41,19 @@
   width: 20px;
   opacity: 50%;
   transition: all 0.3s ease-in-out;
+}
+
+.tick_icon {
+  margin-top: 8px;
+  width: 30px;
+  opacity: 50%;
+  transition: all 0.3s ease-in-out;
+  flex: 0 0 auto;
+}
+
+.tick_icon:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .project_card_delete:hover .delete_icon {

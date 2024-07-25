@@ -57,6 +57,7 @@ const ProjectForm = ({ setProjects }) => {
           name="project"
           value={projectData.project}
           placeholder="Enter Your Project Name"
+          autoComplete="off"
           onChange={handleChange}
         />
         <div className="project_form_bottom_line">

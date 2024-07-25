@@ -2,8 +2,16 @@ import React from "react";
 import "./css/ProjectCard.css";
 import Tag from "./Tag";
 import DeleteIcon from "./assets/delete.png";
+import TickIcon from "./assets/tick.png";
 
-const ProjectCard = ({ title, tags, handleDelete, index }) => {
+const ProjectCard = ({
+  title,
+  tags,
+  handleDelete,
+  handleTick,
+  index,
+  status,
+}) => {
   return (
     <article className="project_card">
       <p className="project_title">{title}</p>
@@ -18,6 +26,15 @@ const ProjectCard = ({ title, tags, handleDelete, index }) => {
           onClick={() => handleDelete(index)}
         >
           <img src={DeleteIcon} className="delete_icon" alt="" />
+        </div>
+        <div
+          className="project_card_tick"
+          onClick={() => handleTick(index)}
+          style={
+            status === "finished" ? { display: "none" } : { disabled: true }
+          }
+        >
+          <img src={TickIcon} className="tick_icon" />
         </div>
       </div>
     </article>

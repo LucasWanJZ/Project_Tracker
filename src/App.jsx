@@ -23,6 +23,19 @@ const App = () => {
     setProjects(newProjects);
   };
 
+  const handleTick = (projectIndex) => {
+    const chosenProject = projects[projectIndex];
+    if (chosenProject.status === "todo") {
+      chosenProject.status = "ongoing";
+    } else {
+      chosenProject.status = "finished";
+    }
+    const newProjects = projects.map((project, index) =>
+      index === projectIndex ? chosenProject : project
+    );
+    setProjects(newProjects);
+  };
+
   return (
     <div className="app">
       <ProjectForm setProjects={setProjects}> </ProjectForm>
@@ -33,6 +46,7 @@ const App = () => {
           projects={projects}
           status={"todo"}
           handleDelete={handleDelete}
+          handleTick={handleTick}
         ></ProjectColumn>
         <ProjectColumn
           columnName="Ongoing"
@@ -40,6 +54,7 @@ const App = () => {
           projects={projects}
           status={"ongoing"}
           handleDelete={handleDelete}
+          handleTick={handleTick}
         ></ProjectColumn>
         <ProjectColumn
           columnName="Finished"
@@ -47,6 +62,7 @@ const App = () => {
           projects={projects}
           status={"finished"}
           handleDelete={handleDelete}
+          handleTick={handleTick}
         ></ProjectColumn>
       </main>
     </div>

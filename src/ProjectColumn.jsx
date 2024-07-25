@@ -8,6 +8,7 @@ const ProjectColumn = ({
   projects,
   status,
   handleDelete,
+  handleTick,
 }) => {
   return (
     <section className="project_column">
@@ -24,7 +25,9 @@ const ProjectColumn = ({
               title={project.project}
               tags={project.tags}
               handleDelete={handleDelete}
+              handleTick={handleTick}
               index={index}
+              status={status}
             />
           )
       )}
