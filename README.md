@@ -1,6 +1,6 @@
 # Project Tracker
 
-Just a simple Project Tracker with ReactJS!
+Project Tracker website to track my projects building journey
 
 ## Features
 
@@ -8,10 +8,11 @@ Just a simple Project Tracker with ReactJS!
 - Add project
 - delete project
 - project tags
+- project details
 
 ## Future Work
 
-- Improve UI
+- add Project details ✅
 - Add "tick" Button for Projects in To-Do and Ongoing ✅
 - add gmail authentication for different users
-- freely customizable tags
+- Improve UI

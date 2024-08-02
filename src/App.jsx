@@ -12,7 +12,19 @@ const oldProjects = localStorage.getItem("projects");
 
 const App = () => {
   const [projects, setProjects] = useState(JSON.parse(oldProjects) || []);
-  const [modal, setModal] = useState({ title: "", tags: [] });
+  const [modal, setModal] = useState({
+    index: -1,
+    title: "",
+    tags: [],
+    status: "todo",
+    description: "",
+    todo1: "",
+    todo2: "",
+    todo3: "",
+    done1: false,
+    done2: false,
+    done3: false,
+  });
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -39,8 +51,21 @@ const App = () => {
     setProjects(newProjects);
   };
 
-  const handleOpenModal = (title, tags) => {
-    setModal({ title, tags });
+  const handleOpenModal = (projectIndex) => {
+    const chosenProject = projects[projectIndex];
+    setModal({
+      index: projectIndex,
+      title: chosenProject.project,
+      tags: chosenProject.tags,
+      status: chosenProject.status,
+      description: chosenProject.description,
+      todo1: chosenProject.todo1,
+      todo2: chosenProject.todo2,
+      todo3: chosenProject.todo3,
+      done1: chosenProject.done1,
+      done2: chosenProject.done2,
+      done3: chosenProject.done3,
+    });
     setShowModal(true);
   };
 
@@ -81,7 +106,11 @@ const App = () => {
         ></ProjectColumn>
       </main>
       {showModal && (
-        <Modal title={modal.title} tags={modal.tags} onClose={onClose}></Modal>
+        <Modal
+          modalData={modal}
+          onClose={onClose}
+          setProjects={setProjects}
+        ></Modal>
       )}
     </div>
   );

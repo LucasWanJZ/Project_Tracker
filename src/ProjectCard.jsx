@@ -15,11 +15,10 @@ const ProjectCard = ({
   handleOpenModal,
 }) => {
   return (
-    <article
-      className="project_card"
-      onClick={() => handleOpenModal(title, tags)}
-    >
-      <p className="project_title">{title}</p>
+    <article className="project_card">
+      <p className="project_title" onClick={() => handleOpenModal(index)}>
+        {title}
+      </p>
       <div className="project_card_bottom_line">
         <div className="project_card_tags">
           {tags.map((tag, index) => (
