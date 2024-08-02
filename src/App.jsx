@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./css/App.css";
 import ProjectForm from "./ProjectForm";
 import ProjectColumn from "./ProjectColumn";
+import Modal from "./Modal";
 import ToDoIcon from "./assets/direct-hit.png";
 import OngoingIcon from "./assets/glowing-star.png";
 import FinishedIcon from "./assets/check-mark-button.png";
@@ -11,6 +12,8 @@ const oldProjects = localStorage.getItem("projects");
 
 const App = () => {
   const [projects, setProjects] = useState(JSON.parse(oldProjects) || []);
+  const [modal, setModal] = useState({ title: "", tags: [] });
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("projects", JSON.stringify(projects));
@@ -36,6 +39,15 @@ const App = () => {
     setProjects(newProjects);
   };
 
+  const handleOpenModal = (title, tags) => {
+    setModal({ title, tags });
+    setShowModal(true);
+  };
+
+  const onClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="app">
       <ProjectForm setProjects={setProjects}> </ProjectForm>
@@ -47,6 +59,7 @@ const App = () => {
           status={"todo"}
           handleDelete={handleDelete}
           handleTick={handleTick}
+          handleOpenModal={handleOpenModal}
         ></ProjectColumn>
         <ProjectColumn
           columnName="Ongoing"
@@ -55,6 +68,7 @@ const App = () => {
           status={"ongoing"}
           handleDelete={handleDelete}
           handleTick={handleTick}
+          handleOpenModal={handleOpenModal}
         ></ProjectColumn>
         <ProjectColumn
           columnName="Finished"
@@ -63,8 +77,12 @@ const App = () => {
           status={"finished"}
           handleDelete={handleDelete}
           handleTick={handleTick}
+          handleOpenModal={handleOpenModal}
         ></ProjectColumn>
       </main>
+      {showModal && (
+        <Modal title={modal.title} tags={modal.tags} onClose={onClose}></Modal>
+      )}
     </div>
   );
 };

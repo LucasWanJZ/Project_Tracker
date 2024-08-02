@@ -1,6 +1,7 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "./css/ProjectColumn.css";
 import ProjectCard from "./ProjectCard";
+import Modal from "./Modal";
 
 const ProjectColumn = ({
   columnName,
@@ -9,6 +10,7 @@ const ProjectColumn = ({
   status,
   handleDelete,
   handleTick,
+  handleOpenModal,
 }) => {
   return (
     <section className="project_column">
@@ -28,6 +30,7 @@ const ProjectColumn = ({
               handleTick={handleTick}
               index={index}
               status={status}
+              handleOpenModal={handleOpenModal}
             />
           )
       )}

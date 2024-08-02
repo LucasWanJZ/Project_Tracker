@@ -1,0 +1,97 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.modal-content {
+  width: 50%;
+  height: 75%;
+  background: white;
+  border: white 1px solid;
+  border-radius: 1%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-title {
+  font-weight: 600;
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+.modal_tags {
+  padding-left: 5%;
+}
+
+.modal-description {
+  font-weight: 400;
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+.description {
+  padding-left: 5%;
+}
+
+.modal-todo {
+  padding-left: 5%;
+}
+
+.modal-todo h2 {
+  font-weight: 600;
+  padding-top: 3%;
+}
+
+.todo-item {
+  padding-top: 2%;
+}
+
+.todo-item label {
+  padding-left: 5%;
+  font-size: 125%;
+}
+
+.edit-button {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  top: 90%;
+  left: 35%;
+}
+
+.save-button {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  top: 90%;
+  left: 50%;
+}
+
+/* edit */
+.description-field {
+  width: 90%;
+  height: 20%;
+  margin-left: 5%;
+  margin-top: 2%;
+  font-size: large;
+  text-align: left;
+  vertical-align: top;
+  resize: none;
+}
+
+.td-field {
+  resize: none;
+  width: 60%;
+  height: 30px;
+  margin-left: 5%;
+}

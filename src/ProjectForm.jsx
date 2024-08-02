@@ -8,6 +8,10 @@ const ProjectForm = ({ setProjects }) => {
     project: "",
     status: "todo",
     tags: [],
+    description: "",
+    todo1: { task: "", done: false },
+    todo2: { task: "", done: false },
+    todo3: { task: "", done: false },
   });
 
   const checkTag = (tag) => {
@@ -24,7 +28,6 @@ const ProjectForm = ({ setProjects }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(projectData);
     setProjects((prev) => {
       return [...prev, projectData];
     });
@@ -48,6 +51,8 @@ const ProjectForm = ({ setProjects }) => {
     }
   };
 
+  const SubmitTag = (e) => {};
+
   return (
     <header className="app_header">
       <form onSubmit={handleSubmit}>
@@ -59,13 +64,14 @@ const ProjectForm = ({ setProjects }) => {
           placeholder="Enter Your Project Name"
           autoComplete="off"
           onChange={handleChange}
+          required={true}
         />
         <div className="project_form_bottom_line">
-          <div>
+          <div className="tags_container">
             <Tag
-              tagName="GameDev"
+              tagName="Prioritize"
               selectTag={selectTag}
-              selected={checkTag("GameDev")}
+              selected={checkTag("Prioritize")}
             />
             <Tag
               tagName="WebDev"
@@ -73,9 +79,9 @@ const ProjectForm = ({ setProjects }) => {
               selected={checkTag("WebDev")}
             />
             <Tag
-              tagName="MobileDev"
+              tagName="GameDev"
               selectTag={selectTag}
-              selected={checkTag("MobileDev")}
+              selected={checkTag("GameDev")}
             />
             <Tag
               tagName="Others"

@@ -3,9 +3,9 @@ import "./css/tag.css";
 
 export const Tag = ({ tagName, selectTag, selected }) => {
   const tagStyle = {
-    GameDev: { backgroundColor: "#fda821" },
+    Prioritize: { backgroundColor: "red" },
     WebDev: { backgroundColor: "#15d4c8" },
-    MobileDev: { backgroundColor: "#ffd12c" },
+    GameDev: { backgroundColor: "#ffd12c" },
     Others: { backgroundColor: "#4cdafc" },
     Default: { backgroundColor: "#f9f9f9" },
   };
