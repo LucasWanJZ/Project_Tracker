@@ -35,22 +35,12 @@ const Modal = ({ modalData, onClose, setProjects }) => {
     });
   };
 
-  useEffect(() => {
-    const handleEscapeKey = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
-    };
-    window.addEventListener("keydown", handleEscapeKey);
-
-    return () => {
-      window.removeEventListener("keydown", handleEscapeKey);
-    };
-  }, [onClose]);
-
   return (
     <div className="modal-backdrop">
       <div className="modal-content">
+        <button className="close-button" onClick={onClose}>
+          X
+        </button>
         <h2 className="modal-title">{modalData.title}</h2>
         <div className="modal_tags">
           {modalData.tags.map((tag, index) => (
