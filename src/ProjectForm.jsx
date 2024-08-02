@@ -39,9 +39,12 @@ const ProjectForm = ({ setProjects }) => {
       status: "todo",
       tags: [],
       description: "",
-      todo1: { task: "", done: false },
-      todo2: { task: "", done: false },
-      todo3: { task: "", done: false },
+      todo1: "",
+      todo2: "",
+      todo3: "",
+      done1: false,
+      done2: false,
+      done3: false,
     });
 
     console.log(projectData);
