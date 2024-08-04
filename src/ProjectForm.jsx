@@ -7,6 +7,7 @@ const ProjectForm = ({ setProjects }) => {
   const [projectData, setProjectData] = useState({
     project: "",
     status: "todo",
+    link: "",
     tags: [],
     description: "",
     todo1: "",
@@ -29,6 +30,10 @@ const ProjectForm = ({ setProjects }) => {
     });
   };
 
+  const handleAddTag = (e) => {
+    e.preventDefault();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setProjects((prev) => {
@@ -37,6 +42,7 @@ const ProjectForm = ({ setProjects }) => {
     setProjectData({
       project: "",
       status: "todo",
+      link: "",
       tags: [],
       description: "",
       todo1: "",
@@ -46,8 +52,6 @@ const ProjectForm = ({ setProjects }) => {
       done2: false,
       done3: false,
     });
-
-    console.log(projectData);
   };
 
   const selectTag = (tag) => {
@@ -65,7 +69,7 @@ const ProjectForm = ({ setProjects }) => {
 
   return (
     <header className="app_header">
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           className="project_input"
@@ -74,7 +78,6 @@ const ProjectForm = ({ setProjects }) => {
           placeholder="Enter Your Project Name"
           autoComplete="off"
           onChange={handleChange}
-          required={true}
         />
         <div className="project_form_bottom_line">
           <div className="tags_container">
@@ -99,7 +102,6 @@ const ProjectForm = ({ setProjects }) => {
               selected={checkTag("Others")}
             />
           </div>
-
           <div>
             <select
               className="project_status"
@@ -111,7 +113,12 @@ const ProjectForm = ({ setProjects }) => {
               <option value="ongoing">Ongoing</option>
               <option value="finished">Finished</option>
             </select>
-            <button type="submit" className="project_submit">
+            <button
+              type="submit"
+              className="project_submit"
+              onClick={handleSubmit}
+              disabled={!projectData.project}
+            >
               + Add Project
             </button>
           </div>

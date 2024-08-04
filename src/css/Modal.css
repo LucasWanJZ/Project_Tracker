@@ -30,17 +30,40 @@
 }
 
 .modal_tags {
+  padding-top: 1%;
   padding-left: 5%;
 }
 
 .modal-description {
-  font-weight: 400;
+  font-weight: 600;
   padding-left: 5%;
-  padding-top: 2%;
 }
 
 .description {
   padding-left: 5%;
+  white-space: pre-wrap;
+}
+
+.status {
+  padding-left: 5%;
+  font-weight: 600;
+  font-size: medium;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+}
+
+.link-name {
+  font-weight: 600;
+  font-size: large;
+}
+
+.link {
+  padding-left: 2%;
+  font-size: medium;
 }
 
 .modal-todo {

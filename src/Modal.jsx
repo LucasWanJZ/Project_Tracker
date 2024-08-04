@@ -6,6 +6,7 @@ const Modal = ({ modalData, onClose, setProjects }) => {
   const [projectData, setProjectData] = useState({
     project: modalData.title,
     status: modalData.status,
+    link: modalData.link,
     tags: modalData.tags,
     description: modalData.description,
     todo1: modalData.todo1,
@@ -20,8 +21,6 @@ const Modal = ({ modalData, onClose, setProjects }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
-
     setProjectData((prev) => {
       return { ...prev, [name]: value };
     });
@@ -42,6 +41,29 @@ const Modal = ({ modalData, onClose, setProjects }) => {
           X
         </button>
         <h2 className="modal-title">{modalData.title}</h2>
+        <p className="status">Status : {projectData.status}</p>
+        <div className="link-container">
+          <p className="link-name">Link: </p>
+          {!isEditing ? (
+            <a
+              className="link"
+              href={projectData.link}
+              target="_blank"
+              rel="noopener noreferer"
+            >
+              {projectData.link}
+            </a>
+          ) : (
+            <input
+              className="link-field"
+              type="text"
+              name="link"
+              value={projectData.link}
+              onChange={handleChange}
+              placeholder="Enter link here"
+            ></input>
+          )}
+        </div>
         <div className="modal_tags">
           {modalData.tags.map((tag, index) => (
             <Tag key={index} tagName={tag} selected />
@@ -135,6 +157,7 @@ const Modal = ({ modalData, onClose, setProjects }) => {
             setProjects((prevProjects) => {
               const updatedProjects = [...prevProjects];
               updatedProjects[modalData.index] = projectData;
+              console.log(updatedProjects);
               return updatedProjects;
             });
           }}

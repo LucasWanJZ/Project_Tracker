@@ -18,6 +18,7 @@ const App = () => {
     tags: [],
     status: "todo",
     description: "",
+    link: "",
     todo1: "",
     todo2: "",
     todo3: "",
@@ -53,10 +54,12 @@ const App = () => {
 
   const handleOpenModal = (projectIndex) => {
     const chosenProject = projects[projectIndex];
+    console.log(chosenProject);
     setModal({
       index: projectIndex,
       title: chosenProject.project,
       tags: chosenProject.tags,
+      link: chosenProject.link,
       status: chosenProject.status,
       description: chosenProject.description,
       todo1: chosenProject.todo1,
