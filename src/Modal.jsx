@@ -43,13 +43,13 @@ const Modal = ({ modalData, onClose, setProjects }) => {
         {isEditing ? (
           <img
             className="cat-img"
-            src="src/assets/catto/catto.png"
+            src="./assets/catto/catto.png"
             alt="cat-edit.png"
           />
         ) : (
           <img
             className="cat-img"
-            src="src/assets/catto/catto2.png"
+            src="./assets/catto/catto2.png"
             alt="cat.png"
           />
         )}
