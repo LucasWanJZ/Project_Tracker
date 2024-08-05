@@ -1,6 +1,6 @@
 # Project Tracker
 
-Project Tracker website to track my projects building journey
+Cat themed Project Tracker website to track my projects building journey :3
 
 ## Features
 
@@ -15,4 +15,5 @@ Project Tracker website to track my projects building journey
 - add Project details ✅
 - Add "tick" Button for Projects in To-Do and Ongoing ✅
 - add gmail authentication for different users
-- Improve UI
+- Improve UI ✅
+- Add Catto ✅

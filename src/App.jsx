@@ -54,7 +54,6 @@ const App = () => {
 
   const handleOpenModal = (projectIndex) => {
     const chosenProject = projects[projectIndex];
-    console.log(chosenProject);
     setModal({
       index: projectIndex,
       title: chosenProject.project,

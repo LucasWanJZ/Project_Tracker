@@ -182,7 +182,6 @@ const Modal = ({ modalData, onClose, setProjects }) => {
             setProjects((prevProjects) => {
               const updatedProjects = [...prevProjects];
               updatedProjects[modalData.index] = projectData;
-              console.log(updatedProjects);
               return updatedProjects;
             });
           }}
