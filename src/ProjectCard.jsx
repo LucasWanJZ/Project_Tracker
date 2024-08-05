@@ -35,20 +35,22 @@ const ProjectCard = ({
             <Tag key={index} tagName={tag} selected />
           ))}
         </div>
-        <img
-          src={DeleteIcon}
-          className="delete_icon"
-          onClick={() => handleDelete(index)}
-          alt=""
-        />
-        <div
-          className="project_card_tick"
-          onClick={() => handleTick(index)}
-          style={
-            status === "finished" ? { display: "none" } : { disabled: true }
-          }
-        >
-          <img src={TickIcon} className="tick_icon" />
+        <div className="icon-container">
+          <img
+            src={DeleteIcon}
+            className="delete_icon"
+            onClick={() => handleDelete(index)}
+            alt=""
+          />
+          <div
+            className="project_card_tick"
+            onClick={() => handleTick(index)}
+            style={
+              status === "finished" ? { display: "none" } : { disabled: true }
+            }
+          >
+            <img src={TickIcon} className="tick_icon" />
+          </div>
         </div>
       </div>
     </article>
