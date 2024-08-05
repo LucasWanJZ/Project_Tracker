@@ -15,9 +15,19 @@ const ProjectCard = ({
   handleOpenModal,
 }) => {
   return (
-    <article className="project_card">
+    <article
+      className="project_card"
+      style={{
+        backgroundColor:
+          status === "todo"
+            ? "lightcoral"
+            : status === "ongoing"
+            ? "rgb(241,232,144)"
+            : "rgb(211,229,182)",
+      }}
+    >
       <p className="project_title" onClick={() => handleOpenModal(index)}>
-        {title}
+        🐾 {title}
       </p>
       <div className="project_card_bottom_line">
         <div className="project_card_tags">
@@ -25,12 +35,12 @@ const ProjectCard = ({
             <Tag key={index} tagName={tag} selected />
           ))}
         </div>
-        <div
-          className="project_card_delete"
+        <img
+          src={DeleteIcon}
+          className="delete_icon"
           onClick={() => handleDelete(index)}
-        >
-          <img src={DeleteIcon} className="delete_icon" alt="" />
-        </div>
+          alt=""
+        />
         <div
           className="project_card_tick"
           onClick={() => handleTick(index)}

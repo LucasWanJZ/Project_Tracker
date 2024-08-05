@@ -102,7 +102,7 @@ const ProjectForm = ({ setProjects }) => {
               selected={checkTag("Others")}
             />
           </div>
-          <div>
+          <div className="status-container">
             <select
               className="project_status"
               onChange={handleChange}

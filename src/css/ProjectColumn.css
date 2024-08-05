@@ -1,9 +1,18 @@
 .project_column_icon {
-  width: 30px;
-  margin-right: 5px;
+  width: 20%;
+  margin-right: 5%;
+}
+
+.projects {
+  position: fixed;
+  width: 33.33%;
+  height: 100%;
 }
 
 .project_column_heading {
+  margin-top: 0;
   display: flex;
   align-items: center;
+  background-color: wheat;
+  color: rgb(100, 55, 13);
 }

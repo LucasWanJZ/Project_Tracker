@@ -37,13 +37,34 @@ const Modal = ({ modalData, onClose, setProjects }) => {
   return (
     <div className="modal-backdrop">
       <div className="modal-content">
-        <button className="close-button" onClick={onClose}>
+        <button className="modal-button close-button" onClick={onClose}>
           X
         </button>
+        {isEditing ? (
+          <img
+            className="cat-img"
+            src="src/assets/catto/catto.png"
+            alt="cat-edit.png"
+          />
+        ) : (
+          <img
+            className="cat-img"
+            src="src/assets/catto/catto2.png"
+            alt="cat.png"
+          />
+        )}
         <h2 className="modal-title">{modalData.title}</h2>
-        <p className="status">Status : {projectData.status}</p>
+        <div className="modal_tags">
+          {modalData.tags.map((tag, index) => (
+            <Tag key={index} tagName={tag} selected />
+          ))}
+        </div>
+        <div style={{ display: "flex" }}>
+          <h2 className="status">Status :</h2>
+          <p className="stat">{projectData.status}</p>
+        </div>
         <div className="link-container">
-          <p className="link-name">Link: </p>
+          <h2 className="link-name">Link :</h2>
           {!isEditing ? (
             <a
               className="link"
@@ -64,11 +85,6 @@ const Modal = ({ modalData, onClose, setProjects }) => {
             ></input>
           )}
         </div>
-        <div className="modal_tags">
-          {modalData.tags.map((tag, index) => (
-            <Tag key={index} tagName={tag} selected />
-          ))}
-        </div>
         <h2 className="modal-description">Description</h2>
         {!isEditing ? (
           <p className="description">{projectData.description}</p>
@@ -77,7 +93,9 @@ const Modal = ({ modalData, onClose, setProjects }) => {
             className="description-field"
             name="description"
             value={projectData.description}
+            placeholder="Enter description here"
             onChange={handleChange}
+            spellCheck="false"
           ></textarea>
         )}
         <div className="modal-todo">
@@ -85,6 +103,7 @@ const Modal = ({ modalData, onClose, setProjects }) => {
           <div className="todo-item">
             <input
               type="checkbox"
+              className="checkbox"
               id="todo-1"
               name="done1"
               checked={projectData.done1}
@@ -99,6 +118,8 @@ const Modal = ({ modalData, onClose, setProjects }) => {
                 name="todo1"
                 value={projectData.todo1}
                 onChange={handleChange}
+                spellCheck="false"
+                placeholder="Enter to-do here"
               ></textarea>
             )}
           </div>
@@ -119,6 +140,8 @@ const Modal = ({ modalData, onClose, setProjects }) => {
                 name="todo2"
                 value={projectData.todo2}
                 onChange={handleChange}
+                spellCheck="false"
+                placeholder="Enter to-do here"
               ></textarea>
             )}
           </div>
@@ -139,19 +162,21 @@ const Modal = ({ modalData, onClose, setProjects }) => {
                 name="todo3"
                 value={projectData.todo3}
                 onChange={handleChange}
+                spellCheck="false"
+                placeholder="Enter to-do here"
               ></textarea>
             )}
           </div>
         </div>
         <button
-          className="edit-button"
+          className="modal-button edit-button"
           onClick={() => setIsEditing(true)}
           disabled={isEditing}
         >
           Edit
         </button>
         <button
-          className="save-button"
+          className="modal-button save-button"
           onClick={() => {
             setIsEditing(false);
             setProjects((prevProjects) => {

@@ -4,9 +4,9 @@ import "./css/App.css";
 import ProjectForm from "./ProjectForm";
 import ProjectColumn from "./ProjectColumn";
 import Modal from "./Modal";
-import ToDoIcon from "./assets/direct-hit.png";
-import OngoingIcon from "./assets/glowing-star.png";
-import FinishedIcon from "./assets/check-mark-button.png";
+import ToDoIcon from "./assets/catto/todocat.png";
+import OngoingIcon from "./assets/catto/ongoingcat.png";
+import FinishedIcon from "./assets/catto/finishedcat.png";
 
 const oldProjects = localStorage.getItem("projects");
 

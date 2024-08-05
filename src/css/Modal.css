@@ -14,65 +14,65 @@
 .modal-content {
   width: 50%;
   height: 75%;
-  background: white;
-  border: white 1px solid;
+  background: wheat;
+  color: rgb(202, 128, 31);
   border-radius: 1%;
   position: absolute;
   top: 50%;
   left: 50%;
+  padding-left: 2%;
+  padding-top: 1%;
   transform: translate(-50%, -50%);
 }
 
-.modal-title {
+.modal-backdrop h2 {
   font-weight: 600;
-  padding-left: 5%;
-  padding-top: 2%;
+  font-size: x-large;
 }
 
-.modal_tags {
-  padding-top: 1%;
-  padding-left: 5%;
+/* image */
+.cat-img {
+  position: absolute;
+  width: 35%;
+  height: 50%;
+  left: 60%;
+  top: 50%;
 }
 
-.modal-description {
-  font-weight: 600;
-  padding-left: 5%;
+/* status */
+.stat {
+  padding-left: 1%;
+  padding-top: 0.5%;
+  font-size: large;
+  color: rgb(100, 55, 13);
 }
 
-.description {
-  padding-left: 5%;
-  white-space: pre-wrap;
-}
-
-.status {
-  padding-left: 5%;
-  font-weight: 600;
-  font-size: medium;
-}
-
+/* links */
 .link-container {
   display: flex;
   flex-direction: row;
-  padding-left: 5%;
-}
-
-.link-name {
-  font-weight: 600;
-  font-size: large;
 }
 
 .link {
-  padding-left: 2%;
-  font-size: medium;
+  padding-left: 1%;
+  padding-top: 0.5%;
+  font-size: large;
+  color: rgb(100, 55, 13);
 }
 
-.modal-todo {
-  padding-left: 5%;
-}
-
-.modal-todo h2 {
+/* description */
+.modal-description {
   font-weight: 600;
-  padding-top: 3%;
+}
+
+.description {
+  white-space: pre-wrap;
+  color: rgb(100, 55, 13);
+}
+
+/* todo */
+.modal-todo h2 {
+  padding-top: 2%;
 }
 
 .todo-item {
@@ -81,7 +81,30 @@
 
 .todo-item label {
   padding-left: 5%;
-  font-size: 125%;
+  font-size: x-large;
+}
+
+.checkbox:hover:not(:disabled) {
+  cursor: pointer;
+}
+
+/* buttons */
+.modal-button {
+  background-color: rgb(202, 128, 31);
+  color: rgb(100, 55, 13);
+  font-weight: 600;
+  border: brown 1px;
+  border-radius: 3%;
+}
+
+.modal-button:disabled {
+  background-color: rgb(216, 187, 151);
+}
+
+.modal-button:hover:not(:disabled) {
+  background-color: rgb(235, 181, 111);
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .edit-button {
@@ -109,12 +132,21 @@
 }
 
 /* edit */
+input {
+  background-color: rgb(235, 181, 111);
+  font-weight: 600;
+  color: rgb(100, 55, 13);
+}
+
+textarea {
+  background-color: rgb(235, 181, 111);
+  font-weight: 600;
+  color: rgb(100, 55, 13);
+}
+
 .description-field {
   width: 90%;
   height: 20%;
-  margin-left: 5%;
-  margin-top: 2%;
-  font-size: large;
   text-align: left;
   vertical-align: top;
   resize: none;
@@ -122,7 +154,12 @@
 
 .td-field {
   resize: none;
-  width: 60%;
+  width: 50%;
   height: 30px;
-  margin-left: 5%;
+  margin-left: 2%;
+}
+
+.link-field {
+  width: 30%;
+  margin-left: 2%;
 }

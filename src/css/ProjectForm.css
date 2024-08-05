@@ -2,53 +2,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #dcdcdc;
+  background-color: rgb(191, 224, 153);
 }
 
 .project_input {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: x-large;
+  font-weight: 00;
   background: #f9f9f9;
-  color: black;
+  color: rgb(100, 55, 13);
   border: 1px solid #dfe3e6;
   border-radius: 5px;
-  padding: 8px 12px;
-  margin-bottom: 15px;
+  padding: 1% 1%;
+  margin-bottom: 1%;
   width: 100%;
 }
 
 .project_input::placeholder {
-  color: #686868;
+  color: rgb(100, 55, 13);
 }
 
 .app_header > form {
-  width: 40%;
+  width: 50%;
 }
-
 .project_form_bottom_line {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+}
+
+/* Project Status */
+.status-container {
+  width: 30%;
 }
 
 .project_status {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: large;
+  font-weight: 600;
   border: 1px solid #999;
+  background-color: rgb(232, 245, 232);
+  color: rgb(100, 55, 13);
+  border: rgb(100, 55, 13) 2px solid;
   border-radius: 5px;
-  width: 120px;
-  height: 40px;
-  padding: 0 5px;
+  width: 40%;
+  height: 100%;
+  padding: 0 3%;
+  cursor: pointer;
 }
 
 .project_submit {
-  font-size: 16px;
-  font-weight: 500;
-  background-color: #6457f9;
+  font-size: large;
+  font-weight: 600;
+  background-color: green;
   color: #fff;
   border-radius: 5px;
-  height: 40px;
-  padding: 3px 13px;
-  border: none;
+  height: 50%;
+  width: 50%;
+  padding: 2% 5%;
   cursor: pointer;
 }

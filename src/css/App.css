@@ -6,10 +6,9 @@
 .app_main {
   display: flex;
   justify-content: space-evenly;
-  padding: 20px 8%;
 }
 
 .project_column {
   width: 33.33%;
-  margin: 20px;
+  height: 100%;
 }
