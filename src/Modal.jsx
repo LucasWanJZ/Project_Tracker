@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from "react";
 import "./css/Modal.css";
+import editcatIcon from "./assets/catto/catto.png";
+import catIcon from "./assets/catto/catto2.png";
 import Tag from "./Tag";
 
 const Modal = ({ modalData, onClose, setProjects }) => {
@@ -41,17 +43,9 @@ const Modal = ({ modalData, onClose, setProjects }) => {
           X
         </button>
         {isEditing ? (
-          <img
-            className="cat-img"
-            src="./assets/catto/catto.png"
-            alt="cat-edit.png"
-          />
+          <img className="cat-img" src={editcatIcon} alt="cat-edit.png" />
         ) : (
-          <img
-            className="cat-img"
-            src="./assets/catto/catto2.png"
-            alt="cat.png"
-          />
+          <img className="cat-img" src={catIcon} alt="cat.png" />
         )}
         <h2 className="modal-title">{modalData.title}</h2>
         <div className="modal_tags">
