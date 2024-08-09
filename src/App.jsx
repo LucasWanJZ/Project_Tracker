@@ -7,6 +7,7 @@ import Modal from "./Modal";
 import ToDoIcon from "./assets/catto/todocat.png";
 import OngoingIcon from "./assets/catto/ongoingcat.png";
 import FinishedIcon from "./assets/catto/finishedcat.png";
+import logoCat from "./src/assets/catto/catto3.png";
 
 let oldProjects = localStorage.getItem("projects");
 
@@ -79,11 +80,7 @@ const App = () => {
   return (
     <div className="app">
       <ProjectForm setProjects={setProjects}> </ProjectForm>
-      <img
-        src="./src/assets/catto/catto3.png"
-        alt="catto"
-        className="logo-cat"
-      />
+      <img src={logoCat} alt="catto" className="logo-cat" />
       <main className="app_main">
         <ProjectColumn
           columnName="To Do"
