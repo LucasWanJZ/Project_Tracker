@@ -3,6 +3,13 @@
   grid-template-rows: 150px auto;
 }
 
+.logo-cat {
+  position: absolute;
+  width: 9%;
+  height: 15%;
+  left: 16%;
+}
+
 .app_main {
   display: flex;
   justify-content: space-evenly;

@@ -12,6 +12,7 @@ let oldProjects = localStorage.getItem("projects");
 
 const App = () => {
   const [projects, setProjects] = useState(JSON.parse(oldProjects) || []);
+  const [darkMode, setDarkMode] = useState(false);
   const [modal, setModal] = useState({
     index: -1,
     title: "",
@@ -78,6 +79,11 @@ const App = () => {
   return (
     <div className="app">
       <ProjectForm setProjects={setProjects}> </ProjectForm>
+      <img
+        src="./src/assets/catto/catto3.png"
+        alt="catto"
+        className="logo-cat"
+      />
       <main className="app_main">
         <ProjectColumn
           columnName="To Do"

@@ -25,9 +25,14 @@
   transform: translate(-50%, -50%);
 }
 
+/* title */
 .modal-backdrop h2 {
   font-weight: 600;
   font-size: x-large;
+}
+
+.modal-title {
+  color: rgb(49, 27, 7);
 }
 
 /* image */
