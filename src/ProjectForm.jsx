@@ -30,10 +30,6 @@ const ProjectForm = ({ setProjects }) => {
     });
   };
 
-  const handleAddTag = (e) => {
-    e.preventDefault();
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setProjects((prev) => {

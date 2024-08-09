@@ -8,7 +8,7 @@ import ToDoIcon from "./assets/catto/todocat.png";
 import OngoingIcon from "./assets/catto/ongoingcat.png";
 import FinishedIcon from "./assets/catto/finishedcat.png";
 
-const oldProjects = localStorage.getItem("projects");
+let oldProjects = localStorage.getItem("projects");
 
 const App = () => {
   const [projects, setProjects] = useState(JSON.parse(oldProjects) || []);
