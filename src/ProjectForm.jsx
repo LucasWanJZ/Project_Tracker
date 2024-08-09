@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./css/ProjectForm.css";
 import Tag from "./Tag";
 
-const ProjectForm = (setProjects) => {
+const ProjectForm = ({ setProjects }) => {
   const [projectData, setProjectData] = useState({
     project: "",
     status: "todo",
