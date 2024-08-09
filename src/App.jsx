@@ -7,7 +7,7 @@ import Modal from "./Modal";
 import ToDoIcon from "./assets/catto/todocat.png";
 import OngoingIcon from "./assets/catto/ongoingcat.png";
 import FinishedIcon from "./assets/catto/finishedcat.png";
-import logoCat from "./src/assets/catto/catto3.png";
+import logoCat from "./assets/catto/catto3.png";
 
 let oldProjects = localStorage.getItem("projects");
 
